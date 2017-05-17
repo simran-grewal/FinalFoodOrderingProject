@@ -6,7 +6,7 @@ var stripe = require('stripe')('sk_test_FSV1TnnAu8KgXmYsOEtsVtEN');
 
 var paginate = (req, res, next) => {
   // This is pagination
-    var perPage = 9;  // Every page will have 9 product items
+    var perPage = 6;  // Every page will have 9 product items
     var page = req.params.page;
 
     Product

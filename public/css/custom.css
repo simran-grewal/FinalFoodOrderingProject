@@ -10,3 +10,8 @@ body{
 .product-image {
   width: 100%
 }
+
+.producImageSize{
+  height: 430px;
+  width: 600px;
+}

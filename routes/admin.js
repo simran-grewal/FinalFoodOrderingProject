@@ -1,8 +1,7 @@
 var router =   require('express').Router();
 var Category = require('../models/category');
-var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
-
+var async = require('async');
+var Product = require('../models/product');
 router.get('/add-category',  (req, res, next) => {
   console.log(req.user);
   if(!req.user || req.user.email != 'manjit@gmail.com'){
@@ -39,8 +38,28 @@ router.get('/add-list-item', (req, res, next) => {
 
 })
 
-router.post('/add-list-item', upload.single(),(req, res, next) => {
-  res.send(req.files);
+router.post('/add-list-item', (req, res, next) => {
+
+  async.waterfall([
+    (callback) => {
+      Category.findOne({name: req.body.categoryName}, (err, category) => {
+        if(err) return next(err);
+        callback(null, category);
+      });
+    },
+
+    (category, callback) => {
+            var product = new Product();
+            product.category = category._id;
+            product.name = req.body.productName;
+            product.price = req.body.productPrice;
+            product.image = req.body.productImage;
+            product.save();
+    }
+  ]);
+
+    return res.json({message: 'Success'});
+
 });
 
 module.exports = router;
