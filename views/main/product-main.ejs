@@ -44,6 +44,28 @@
         </a>
       </div>
     <%}%>
+<!--
+    <ul class = "pagination in-center">
+      <li>
+       <%
+        for(var i = 0; i < pages; i++) {
+          %>
+            <%
+                if(i === 1) {%>
+
+                <li><a href="/"><%= i %></a></li>
+                  <%} else{%>
+
+                <li><a href="/page/<%= i %>"><%= i %></a></li>
+                <%}
+            %>
+
+          <%
+        }
+       %>
+      </li>
+    </ul> -->
+
 
     <ul class = "pagination in-center">
       <li>

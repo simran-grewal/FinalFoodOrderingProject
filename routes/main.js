@@ -30,7 +30,6 @@ var paginate = (req, res, next) => {
          });
        });
 }
-
 // Creating bridge between  Product database and replica elastic search
 Product.createMapping((err, res) => {
 
