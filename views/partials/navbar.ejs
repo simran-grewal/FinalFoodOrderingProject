@@ -16,7 +16,7 @@
         <form class="navbar-form navbar-left" method = "post" action="/search">
           <div class="form-group">
               <input type="text" name="q" class="form-control" placeholder="search...">
-              <button class = "btn btn-primary" type="submit">Submit</button>
+              <button class = "btn btn-primary" type="submit" disabled>Submit</button>
           </div>
         </form>
       </ul>
@@ -31,7 +31,7 @@
         <li><a href="/cart" class = "glyphicon glyphicon-shopping-cart"><span class="badge"><%= cart %></span></a></li>
 
         <% } else { %>
-          <li><a href="/cart" class = "glyphicon glyphicon-shopping-cart"><span class="badge">0</span></a></li>
+          <li><a href="/" class = "glyphicon glyphicon-shopping-cart"><span class="badge">0</span></a></li>
       <%}%>
       </ul>
 
