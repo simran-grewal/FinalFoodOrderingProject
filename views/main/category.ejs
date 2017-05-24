@@ -1,6 +1,8 @@
 <% layout('layout') -%>
 <div class = "text-center" style="padding-bottom: 1cm">
-  <h1 style = "font-size:40px" class="label label-success" >Results for <%= products[0].category.name %> </h1>
+  <!-- <div class="col-lg-4 col-sm-6" style="text-align:center">
+    <h1 style = "font-size:40px" class="label label-success" >Results for <%= products[0].category.name %> </h1>
+  </div> -->
 </div>
 <div class="container">
 
@@ -14,7 +16,7 @@
               <h3> <%= products[i].name %> </h3>
               <p> <%= products[i].category.name %> </p>
               <p>$<%= products[i].price %> </p>
-                Rs<%= products[i].price * 50 %> 
+                Rs<%= products[i].price * 50 %>
             </div>
           </div>
         </a>
